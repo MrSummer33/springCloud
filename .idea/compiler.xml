@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dto" />
+        <module name="EUREKA" />
+        <module name="feign-client" />
+        <module name="FEIGN_USER" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dto" target="1.5" />
+      <module name="EUREKA" target="1.8" />
+      <module name="feign-client" target="1.8" />
+      <module name="FEIGN_USER" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
