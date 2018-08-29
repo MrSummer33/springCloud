@@ -10,6 +10,7 @@
         <module name="EUREKA" />
         <module name="feign-client" />
         <module name="FEIGN_USER" />
+        <module name="HYSTRIX" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
       <module name="EUREKA" target="1.8" />
       <module name="feign-client" target="1.8" />
       <module name="FEIGN_USER" target="1.8" />
+      <module name="HYSTRIX" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

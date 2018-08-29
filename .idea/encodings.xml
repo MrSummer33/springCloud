@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/EUREKA" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FEIGN_CLIENT" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FEIGN_USER" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HYSTRIX" charset="UTF-8" />
   </component>
 </project>
