@@ -3,10 +3,48 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
     appname: feign-user
-    virtual-host-name: feign-user
+    leaseExpirationDurationInSeconds: 3
+    leaseRenewalIntervalInSeconds: 1
   client:
     registerWithEureka: true
+    region: hangzhou
     serviceUrl:
-      defaultZone: http://localhost:9080/eureka/
+      zone-1: http://localhost:9080/eureka/
+      zone-2: http://xiaxi:9081/eureka/
+
+---
+spring:
+  profiles: peer1
+  application.name: feign-user
+eureka:
+  instance.metadataMap.zone: zone-1
+  client.availability-zones.hangzhou: zone-1,zone-2
+
+server:
+  port: 9070
+
+
+
+---
+spring:
+  profiles: peer2
+  application.name: feign-user
+eureka:
+  instance.metadataMap.zone: zone-2
+  client.availability-zones.hangzhou: zone-2,zone-1
+
+server:
+  port: 9071
+
+
+---
+spring:
+  profiles: peer3
+  application.name: feign-user3
+eureka:
+  instance:
+    hostname: localhost
+
+server:
+  port: 9072

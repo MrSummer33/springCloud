@@ -1,12 +1,38 @@
-server:
-  port: 9080
+eureka:
+  instance:
+    appname: eureka
+  server:
+    enable-self-preservation: false
+  client:
+    registerWithEureka: true
+    region: hangzhou
+    serviceUrl:
+      zone-1: http://localhost:9080/eureka/
+      zone-2: http://xiaxi:9081/eureka/
+
+---
+spring:
+  profiles: peer1
+  application.name: eureka1
 
 eureka:
   instance:
     hostname: localhost
-    appname: eureka
-  client:
-    registerWithEureka: true
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  client.availability-zones.hangzhou: zone-2,zone-1
+
+server:
+  port: 9080
+
+
+---
+spring:
+  profiles: peer2
+  application.name: eureka2
+
+eureka:
+  instance:
+    hostname: xiaxi
+  client.availability-zones.hangzhou: zone-1,zone-2
+
+server:
+  port: 9081
